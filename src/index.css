@@ -1,0 +1,49 @@
+/* Import a font that looks similar to the design, e.g., 'Inter', 'Roboto', 'Open Sans' */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* New Color Palette based on reference image */
+  --primary-blue: #007bff; /* Example: A slightly darker blue for accents */
+  --accent-blue: #4a8dff; /* More prominent blue for active states/buttons */
+  --light-blue-bg: #e0f2ff; /* Light blue background for highlighted elements */
+  --sidebar-bg: #ffffff;
+  --header-bg: #ffffff;
+  --main-bg: #f8faff; /* Very light blue/off-white background */
+  --card-bg: #ffffff;
+  --text-dark: #2c3e50; /* Dark grey for main text */
+  --text-medium: #556c80; /* Medium grey for secondary text */
+  --text-light: #90a4ae; /* Light grey for subtle text */
+  --border-light: #e6eef5;
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05); /* Softer, broader shadow */
+  --green-status: #28a745;
+  --red-status: #dc3545;
+  --progress-fill-blue: #66b0ff; /* For calendar detailed appointment bars */
+  --inactive-day-color: #aebfd0; /* For days outside the current month */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: default; /* No interaction required */
+  font-family: inherit;
+}

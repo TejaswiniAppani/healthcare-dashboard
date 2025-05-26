@@ -1,0 +1,82 @@
+.appointmentCard {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: var(--main-bg); /* Lighter background than parent card */
+  border-radius: 10px;
+  gap: 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow for each simple card */
+}
+
+.iconContainer {
+  width: 45px; /* Slightly larger icon container */
+  height: 45px;
+  background-color: var(--light-blue-bg); /* Light blue background */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.appointmentIcon {
+  font-size: 22px; /* Larger icon */
+  color: var(--accent-blue); /* Accent blue icon color */
+}
+
+.appointmentDetails {
+  flex-grow: 1;
+}
+
+.appointmentTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 3px;
+}
+
+.appointmentTime {
+  font-size: 13px;
+  color: var(--text-medium);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .appointmentCard {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+  .iconContainer {
+    width: 40px;
+    height: 40px;
+  }
+  .appointmentIcon {
+    font-size: 20px;
+  }
+  .appointmentTitle {
+    font-size: 14px;
+  }
+  .appointmentTime {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointmentCard {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+  .iconContainer {
+    width: 35px;
+    height: 35px;
+  }
+  .appointmentIcon {
+    font-size: 18px;
+  }
+  .appointmentTitle {
+    font-size: 13px;
+  }
+  .appointmentTime {
+    font-size: 11px;
+  }
+}

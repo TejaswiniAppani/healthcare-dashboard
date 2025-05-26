@@ -1,0 +1,144 @@
+.sidebar {
+  width: 260px; /* Wider sidebar */
+  background-color: var(--sidebar-bg);
+  padding: 30px 20px;
+  box-shadow: var(--shadow-subtle);
+  flex-shrink: 0;
+  border-bottom-left-radius: 20px; /* Matches app container */
+  position: relative; /* For absolute positioning of bottom nav */
+  display: flex;
+  flex-direction: column;
+}
+
+.generalHeading {
+  font-size: 16px; /* Slightly smaller heading */
+  font-weight: 600;
+  color: var(--text-medium); /* Lighter color */
+  margin-bottom: 25px;
+  padding-left: 10px;
+  text-transform: uppercase; /* Uppercase as in design */
+  letter-spacing: 0.8px;
+}
+
+.navbarNav ul, .bottomNav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navItem {
+  margin-bottom: 8px; /* Reduced margin */
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px; /* Adjusted padding */
+  border-radius: 8px;
+  color: var(--text-medium);
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 15px; /* Slightly smaller font */
+}
+
+.navLink:hover {
+  background-color: var(--light-blue-bg);
+  color: var(--accent-blue);
+}
+
+.navItem.active .navLink { /* Active state styling */
+  background-color: var(--light-blue-bg);
+  color: var(--accent-blue);
+}
+
+.navIcon {
+  font-size: 20px; /* Slightly larger icons */
+  margin-right: 15px;
+  width: 25px;
+  text-align: center;
+  color: inherit; /* Inherit color from parent navLink */
+}
+
+.bottomNav {
+  margin-top: auto; /* Pushes bottom nav to the bottom */
+  padding-top: 20px; /* Space from top nav */
+  border-top: 1px solid var(--border-light); /* Separator line */
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    padding: 20px 15px;
+  }
+  .generalHeading {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  .navLink {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .navIcon {
+    font-size: 18px;
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    padding: 15px 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-light);
+    box-shadow: none;
+    border-radius: 0; /* No rounding on mobile */
+    min-height: auto; /* Allow height to adjust */
+    flex-direction: row; /* Layout horizontally */
+    justify-content: space-around; /* Space out items */
+    align-items: center;
+  }
+  .generalHeading {
+    display: none;
+  }
+  .navbarNav, .bottomNav {
+    flex-grow: 1; /* Allow navs to take space */
+    border-top: none; /* Remove separator */
+  }
+  .navbarNav ul, .bottomNav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 15px;
+  }
+  .navItem {
+    margin-bottom: 0;
+  }
+  .navLink {
+    flex-direction: column;
+    padding: 6px 8px;
+    font-size: 11px;
+    min-width: 60px; /* Ensure a minimum width for small icons */
+    text-align: center;
+  }
+  .navIcon {
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  .bottomNav {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navLink {
+    min-width: 50px;
+    padding: 5px 6px;
+  }
+  .navIcon {
+    font-size: 14px;
+  }
+  .navText {
+    font-size: 10px;
+  }
+}

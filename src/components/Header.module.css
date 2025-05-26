@@ -1,0 +1,177 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--header-bg);
+  box-shadow: var(--shadow-subtle); /* Softer shadow */
+  /* border-bottom: 1px solid var(--border-light); /* Removed as per image */
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  border-top-left-radius: 20px; /* Matches app container */
+  border-top-right-radius: 20px; /* Matches app container */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent-blue); /* Stronger blue for logo */
+  margin-right: 30px; /* Space between logo and search */
+}
+
+.searchBar {
+  position: relative;
+  flex-grow: 1; /* Allow it to take more space */
+  max-width: 450px; /* Increased max width */
+  background-color: var(--main-bg); /* Lighter background for the search bar itself */
+  border-radius: 10px; /* More rounded */
+  padding: 8px 15px; /* Padding for the container */
+  display: flex;
+  align-items: center;
+}
+
+.searchBar input {
+  width: 100%;
+  padding: 5px 10px; /* Reduced internal padding */
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  font-size: 15px;
+  color: var(--text-dark);
+}
+
+.searchBar input::placeholder {
+  color: var(--text-light);
+}
+
+.searchBar input:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.searchIcon {
+  color: var(--text-light);
+  font-size: 18px; /* Slightly larger icon */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Reduced gap */
+  margin-left: 30px; /* Space from search bar */
+}
+
+.userAvatarBtn {
+  background-color: var(--accent-blue); /* Blue background for user avatar area */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensure avatar fits */
+  border: 2px solid var(--accent-blue); /* Stronger border */
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.addButton {
+  background-color: var(--accent-blue);
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 28px; /* Larger plus sign */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  box-shadow: var(--shadow-subtle);
+}
+
+.notificationIcon {
+  position: relative;
+  font-size: 24px;
+  color: var(--text-light); /* Lighter icon color */
+  padding: 5px; /* Clickable area */
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 0px; /* Adjusted position */
+  right: 0px; /* Adjusted position */
+  background-color: var(--red-status);
+  border-radius: 50%;
+  width: 8px; /* Smaller badge */
+  height: 8px;
+  border: 1.5px solid var(--header-bg); /* Border color matches header bg */
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 20px;
+  }
+  .logo {
+    font-size: 22px;
+    margin-right: 20px;
+  }
+  .searchBar {
+    max-width: 350px;
+  }
+  .headerActions {
+    gap: 15px;
+    margin-left: 20px;
+  }
+  .userAvatarBtn {
+    width: 40px;
+    height: 40px;
+  }
+  .addButton {
+    width: 35px;
+    height: 35px;
+    font-size: 24px;
+  }
+  .notificationIcon {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    gap: 10px;
+    border-radius: 0; /* No rounding on mobile */
+  }
+  .logo {
+    order: 1;
+    font-size: 20px;
+    margin-right: 0;
+  }
+  .headerActions {
+    order: 2;
+    margin-left: auto; /* Push actions to right */
+    gap: 10px;
+  }
+  .searchBar {
+    order: 3;
+    flex-basis: 100%;
+    margin-top: 10px;
+    max-width: 100%;
+    padding: 6px 12px;
+  }
+  .userAvatarBtn, .addButton, .notificationIcon {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+  .addButton {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,46 @@
+.dashboardMainContent {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Consistent gap between sections */
+  overflow-y: auto; /* Enable scrolling */
+  background-color: var(--main-bg); /* Background matches main app bg */
+  border-bottom-right-radius: 20px; /* Matches app container */
+}
+
+.bottomSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Upcoming Schedule (2 parts), Activity Feed (1 part) */
+  gap: 30px; /* Consistent gap between components */
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .dashboardMainContent {
+    padding: 25px;
+    gap: 25px;
+  }
+  .bottomSection {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboardMainContent {
+    padding: 20px;
+    gap: 20px;
+  }
+  .bottomSection {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardMainContent {
+    padding: 15px;
+    gap: 15px;
+    border-radius: 0; /* No rounding on mobile */
+  }
+}

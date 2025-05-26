@@ -1,0 +1,139 @@
+/* src/components/HealthStatusCards.module.css */
+.healthStatusCards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--card-bg); /* Keep background for individual card */
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: var(--shadow-subtle); /* Keep shadow for individual card */
+  flex-grow: 1; /* Allow it to grow to fill space */
+  min-width: 320px; /* Ensure a minimum width */
+}
+
+/* Rest of the HealthStatusCards.module.css remains the same as our last good version */
+.card {
+  background-color: var(--main-bg);
+  border-radius: 10px;
+  padding: 18px 22px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cardIcon {
+  font-size: 24px;
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  flex-grow: 1;
+}
+
+.cardDate {
+  font-size: 14px;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+
+.cardBody {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.progressBar {
+  flex-grow: 1;
+  height: 10px;
+  background-color: var(--border-light);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.cardStatus {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.detailsLink {
+  align-self: flex-end;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.detailsLink:hover {
+  color: var(--primary-blue);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .healthStatusCards {
+    min-width: 280px;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 15px 18px;
+    gap: 10px;
+  }
+
+  .cardIcon {
+    font-size: 22px;
+  }
+
+  .cardTitle {
+    font-size: 17px;
+  }
+
+  .cardDate {
+    font-size: 13px;
+  }
+
+  .cardStatus {
+    font-size: 14px;
+  }
+
+  .detailsLink {
+    font-size: 13px;
+  }
+
+  .progressBar {
+    height: 8px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .healthStatusCards {
+    width: 100%;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 12px 15px;
+    gap: 10px;
+  }
+}

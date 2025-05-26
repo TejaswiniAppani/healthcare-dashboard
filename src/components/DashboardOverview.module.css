@@ -1,0 +1,119 @@
+/* src/components/DashboardOverview.module.css */
+.dashboardOverview {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.overviewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 25px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.thisWeekDropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--main-bg);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-medium);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.dropdownArrow {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.overviewGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  max-width: none;
+  margin: 0;
+  align-items: start;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-left: 25px;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 25px;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .overviewGrid {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .overviewGrid {
+    grid-template-columns: 1fr; /* Stack on smaller screens */
+    gap: 0; 
+    max-width: 100%;
+    margin: 0;
+  }
+  .leftColumn,
+  .rightColumn {
+    padding: 0; /* Horizontal padding for stacked columns */
+    margin-top: 0; /* Ensure no top margin on stacked columns */
+    margin-bottom: 0; /* Ensure no bottom margin on stacked columns */
+  }
+  .leftColumn {
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+  }
+  /* Target the header within the rightColumn to remove its default top margin */
+  .rightColumn h2,
+  .rightColumn h3 { /* Assuming "The Upcoming Schedule" is an h2 or h3 */
+    margin-top: 0; /* Remove default top margin */
+    padding-top: 0; /* Ensure no padding contributes to the gap */
+  }
+  .rightColumn {
+    /* Keep its internal gap for Calendar and Upcoming Schedule items */
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .overviewHeader {
+    padding: 0 15px;
+  }
+  .sectionTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .leftColumn,
+  .rightColumn {
+    padding: 0 15px;
+  }
+  .rightColumn {
+    gap: 10px;
+  }
+}

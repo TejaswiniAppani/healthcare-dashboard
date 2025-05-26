@@ -1,0 +1,33 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--main-bg);
+  border-radius: 20px; /* Overall rounded corners for the app container */
+  overflow: hidden; /* Ensures shadows/borders inside don't break out */
+  margin: 15px; /* Creates a slight border around the whole app, like in image */
+  box-shadow: var(--shadow-subtle);
+}
+
+.mainContentArea {
+  display: flex;
+  flex: 1;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .appContainer {
+    margin: 10px;
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContentArea {
+    flex-direction: column;
+  }
+  .appContainer {
+    margin: 0;
+    border-radius: 0;
+  }
+}

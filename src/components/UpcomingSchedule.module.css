@@ -1,0 +1,58 @@
+.upcomingSchedule {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px; /* Adjust spacing */
+}
+
+.daySection {
+  margin-bottom: 0; /* Remove default margin */
+}
+
+.dayHeading {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-medium);
+  margin-bottom: 12px; /* Space between heading and cards */
+}
+
+.appointmentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Gap between simple cards */
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .upcomingSchedule {
+    padding: 20px;
+    gap: 15px;
+  }
+  .sectionTitle {
+    font-size: 19px;
+  }
+  .dayHeading {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .upcomingSchedule {
+    padding: 15px;
+    gap: 12px;
+  }
+  .sectionTitle {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,243 @@
+.calendarView {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.calendarControls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendarHeader {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.navArrow {
+  background-color: var(--main-bg); /* Lighter background for arrows */
+  color: var(--text-medium);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.daysOfWeek {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-medium);
+  margin-bottom: 10px;
+  padding: 0 5px; /* Slight padding */
+}
+
+.daysOfWeek span {
+  padding: 5px 0;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px; /* Slightly larger gap between cells */
+}
+
+.dayCell {
+  position: relative;
+  min-height: 70px; /* Larger cells to accommodate time */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 5px;
+  border-radius: 8px;
+  background-color: var(--main-bg); /* Lighter background for cells */
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* Subtle shadow */
+  text-align: center;
+}
+
+.dayNumber {
+  margin-bottom: 5px;
+}
+
+.otherMonth {
+  color: var(--inactive-day-color); /* Faded color for inactive days */
+  background-color: var(--main-bg); /* Still same background, just text color changes */
+}
+
+.highlightedDay {
+  background-color: var(--light-blue-bg); /* Highlight background */
+  color: var(--accent-blue); /* Highlight text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.appointmentTimes {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.appointmentTime {
+  background-color: var(--accent-blue);
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  align-self: center; /* Center the time blocks */
+}
+
+.detailedAppointments {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.appointmentCard {
+  background-color: var(--main-bg); /* Lighter background for detailed cards */
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  border-left: 5px solid var(--accent-blue); /* Blue left border */
+}
+
+.appointmentIconWrapper {
+  width: 50px; /* Larger icon area */
+  height: 50px;
+  background-color: var(--light-blue-bg);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px; /* Larger icon */
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+.appointmentInfo {
+  flex-grow: 1;
+}
+
+.appointmentType {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 5px;
+}
+
+.appointmentName {
+  font-size: 13px;
+  color: var(--text-medium);
+  margin-bottom: 8px; /* Space for progress bar */
+}
+
+.progressBarWrapper {
+  height: 6px; /* Height of the progress bar */
+  background-color: var(--border-light);
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%; /* Take full width */
+}
+
+.progressBar {
+  height: 100%;
+  background-color: var(--progress-fill-blue); /* Specific blue for this progress bar */
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.appointmentCardTime {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-medium);
+  white-space: nowrap;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .calendarView {
+    padding: 20px;
+  }
+  .calendarHeader {
+    font-size: 18px;
+  }
+  .dayCell {
+    min-height: 60px;
+    padding: 6px 4px;
+  }
+  .appointmentTime {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+  .appointmentIconWrapper {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+  .appointmentType {
+    font-size: 15px;
+  }
+  .appointmentName {
+    font-size: 12px;
+  }
+  .appointmentCardTime {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendarView {
+    padding: 15px;
+  }
+  .dayCell {
+    min-height: 55px;
+    font-size: 13px;
+  }
+  .appointmentTimes {
+    gap: 2px;
+  }
+  .appointmentTime {
+    font-size: 8px;
+    padding: 1px 3px;
+  }
+  .appointmentCard {
+    padding: 12px;
+    gap: 12px;
+  }
+  .appointmentIconWrapper {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dayCell {
+    min-height: 45px;
+    font-size: 12px;
+  }
+  .appointmentTime {
+    font-size: 7px;
+  }
+}
